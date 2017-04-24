@@ -1,3 +1,12 @@
-page-detail {
-
+table.col-3
+{
+    width: 100%;
+}
+table.col-3 th
+{
+    width: 33.33%;
+}
+table.col-3 th, table.col-3 td
+{
+    text-align: center;
 }

@@ -15,7 +15,7 @@
 
 <ion-content padding>
     <ion-list>
-      <ion-item *ngFor="let item of feedItems" >
+      <ion-item *ngFor="let item of feedItems" (click)="openItem(item)">
         <ion-thumbnail item-left>
           <img src="{{item.thumbnail}}">
         </ion-thumbnail>

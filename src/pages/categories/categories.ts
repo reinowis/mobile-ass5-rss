@@ -16,11 +16,14 @@ import { Observable } from 'rxjs/Observable';
 })
 export class Categories {
   feed:Feed;
-  feedService: FeedService;
   feedItems: FeedItem[];
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, private feedService:FeedService,public navParams: NavParams) {
     this.feed = navParams.get('feed');
-    this.feedItems = this.feedService.getArticlesForUrl(this.feed.url, this.feed.type);
+    feedService.getArticlesForUrl(this.feed.url, this.feed.type).subscribe(
+res =>{
+  this.feedItems = res;
+}
+    );
   }
 openItem(item: FeedItem)
 {

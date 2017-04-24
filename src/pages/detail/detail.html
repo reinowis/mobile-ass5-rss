@@ -6,40 +6,44 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>{{content.title}}</ion-title>
+    <ion-title>{{title}}</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
   <ion-card>
-    <ion-card>
-      <ion-card-content>
-      <p *ngFor="let item of content.intro">
-        {{item}}
-      </p>
-      </ion-card-content>
-    </ion-card>
+    <img src="{{item.thumbnail}}" />
+  </ion-card>
+  <ion-card>
     <ion-card-content>
-      <table>
+      <table class="col-3">
         <tr>
           <th>Prep time</th>
           <th>Cook time</th>
           <th>Yield</th>
         </tr>
         <tr>
-          <td>{{content.preptime}}</td>
-          <td>{{content.cooktime}}</td>
-          <td>{{content.yields}}</td>
+          <td>{{preptime}}</td>
+          <td>{{cooktime}}</td>
+          <td>{{yields}}</td>
         </tr>
       </table>
     </ion-card-content>
   </ion-card>
   <ion-card>
+    <ion-card-content>
+      <p *ngFor="let item of intro">
+        {{item}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
     <ion-card-header>
-    INGREDIENTS  
+      INGREDIENTS
     </ion-card-header>
     <ion-card-content>
       <ul>
-        <li *ngFor="let item of content.ingredients">
+        <li *ngFor="let item of ingredients">
           {{item}}
         </li>
       </ul>
@@ -51,7 +55,7 @@
     </ion-card-header>
     <ion-card-content>
       <ul>
-        <li *ngFor="let item of content.methods">
+        <li *ngFor="let item of methods">
           {{item}}
         </li>
       </ul>
